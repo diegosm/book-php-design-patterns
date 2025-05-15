@@ -1,0 +1,40 @@
+{
+    "name": "diegosm/book-php-design-patterns",
+    "type": "project",
+    "description": "A companion repository for the book PHP Design Patterns, featuring examples, code snippets, and supporting materials.",
+    "keywords": ["design patterns"],
+    "license": "Apache-2.0",
+    "require": {
+        "php": "^8.4"
+    },
+    "require-dev": {
+        "phpstan/phpstan-mockery": "^1.1",
+        "phpunit/phpunit": "^11.0.1",
+        "squizlabs/php_codesniffer": "^3.11"
+    },
+    "autoload": {
+        "psr-4": {
+            "DesignPatterns\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit tests",
+        "test:ci": "phpunit --configuration phpunit.xml tests",
+        "lint": "phpcs -p --standard=phpcs.xml src tests",
+        "lint:fix": "phpcbf --standard=phpcs.xml src tests",
+        "analyze": "phpstan analyse src --level=max",
+        "analyze:ci": "phpstan analyse --configuration=phpstan.neon"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
