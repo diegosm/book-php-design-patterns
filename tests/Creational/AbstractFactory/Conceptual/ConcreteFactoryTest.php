@@ -11,14 +11,14 @@ use DesignPatterns\Creational\AbstractFactory\Conceptual\ProductA\ProductA1;
 use DesignPatterns\Creational\AbstractFactory\Conceptual\ProductA\ProductA2;
 use DesignPatterns\Creational\AbstractFactory\Conceptual\ProductB\ProductB1;
 use DesignPatterns\Creational\AbstractFactory\Conceptual\ProductB\ProductB2;
-use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Small;
 use PHPUnit\Framework\Attributes\Test;
+use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\TestCase;
 
 #[Small]
-#[CoversClass(ConcreteFactory1::class)]
+#[UsesClass(AbstractFactory::class)]
 class ConcreteFactoryTest extends TestCase
 {
     #[Test]
