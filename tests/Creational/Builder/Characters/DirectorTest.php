@@ -6,7 +6,6 @@ namespace Tests\Creational\Builder\Characters;
 
 use DesignPatterns\Creational\Builder\Characters\Builders\CharacterOne;
 use DesignPatterns\Creational\Builder\Characters\Builders\CharacterTwo;
-use DesignPatterns\Creational\Builder\Characters\Characters\Character;
 use DesignPatterns\Creational\Builder\Characters\Contracts\BuilderInterface;
 use DesignPatterns\Creational\Builder\Characters\Directors\Director;
 use DesignPatterns\Creational\Builder\Characters\Hats\Cap;
@@ -61,8 +60,19 @@ class DirectorTest extends TestCase
         $character = $builder->getCharacter();
 
         // now the character is built and we can do assertions
-        $this->assertInstanceOf($expectedHat, $character->getHat());
-        $this->assertInstanceOf($expectedPants, $character->getPants());
-        $this->assertInstanceOf($expectedShirt, $character->getShirt());
+        $this->assertInstanceOf(
+            expected: $expectedHat,
+            actual: $character->getHat()
+        );
+
+        $this->assertInstanceOf(
+            expected: $expectedPants,
+            actual: $character->getPants()
+        );
+
+        $this->assertInstanceOf(
+            expected: $expectedShirt,
+            actual: $character->getShirt()
+        );
     }
 }
